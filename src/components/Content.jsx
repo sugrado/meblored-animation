@@ -5,7 +5,7 @@ import { OrbitControls } from "@react-three/drei";
 import { PerspectiveCamera } from "three";
 import gsap from "gsap";
 import { useRef } from "react";
-import { Model } from "./WhiteSmall";
+import { Model } from "./Ready";
 import Buttons from "./Buttons";
 import Background from "./Background";
 
@@ -60,11 +60,11 @@ export default function Content() {
           <Model />
         </Suspense>
         <OrbitControls
-          enableRotate={false}
-          enableZoom={false}
-          enablePan={false}
-          minPolarAngle={0}
-          maxPolarAngle={Math.PI / 2.25}
+          // enableRotate={false}
+          // enableZoom={false}
+          // enablePan={false}
+          // minPolarAngle={0}
+          // maxPolarAngle={Math.PI / 2.25}
           ref={controls}
           makeDefault
         />
