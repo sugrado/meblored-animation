@@ -36,11 +36,11 @@ export default function Buttons(props) {
       >
         Camera
       </button> */}
-      <button onClick={build1}>Yapi 1</button>
-      <button onClick={build2}>Yapi 2</button>
-      <button onClick={build3}>Yapi 3</button>
-      <button onClick={build4}>Yapi 4</button>
-      <button onClick={build5}>Yapi 5</button>
+      <button onClick={build1}>Build 1</button>
+      <button onClick={build2}>Build 2</button>
+      <button onClick={build3}>Build 3</button>
+      <button onClick={build4}>Build 4</button>
+      <button onClick={build5}>Build 5</button>
     </div>
   );
 }

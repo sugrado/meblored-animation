@@ -6,7 +6,15 @@ import { Model } from "./Ready";
 
 export default function CustomCanvas(props) {
   return (
-    <Canvas camera={props.camera} dpr={[1, 1.5]}>
+    <Canvas
+      gl={{
+        antialias: false,
+        pixelRatio: window.devicePixelRatio * 0.5,
+        powerPreference: "high-performance",
+      }}
+      camera={props.camera}
+      dpr={[1, 1.5]}
+    >
       <hemisphereLight
         groundColor="#ff0f00"
         position={[-7, 25, 13]}
