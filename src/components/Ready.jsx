@@ -3,6 +3,7 @@ import { useGLTF } from '@react-three/drei'
 
 export function Model(props) {
   const { nodes, materials } = useGLTF('/ready.glb')
+  
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.Mesh1.geometry} material={materials.M_0114_BlueViolet} />

@@ -1,13 +1,11 @@
 import React from "react";
-import { Suspense } from "react";
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
 import { PerspectiveCamera } from "three";
 import gsap from "gsap";
 import { useRef } from "react";
-import { Model } from "./Ready";
 import Buttons from "./Buttons";
-import Background from "./Background";
+import "../styles/App.css";
+import Loader from "./Loader";
+import CustomCanvas from "./CustomCanvas";
 
 export default function Content() {
   const camera = new PerspectiveCamera(
@@ -16,7 +14,7 @@ export default function Content() {
     0.1,
     100
   );
-  camera.position.set(5, 5, -5);
+  camera.position.set(5, 5, 5);
   const controls = useRef();
 
   const moveCamera = (
@@ -48,27 +46,9 @@ export default function Content() {
 
   return (
     <div style={{ height: window.innerHeight }}>
-      <Buttons moveCamera={moveCamera} />
-      <Canvas camera={camera} dpr={[1, 1.5]}>
-        <hemisphereLight
-          groundColor="#ff0f00"
-          position={[-7, 25, 13]}
-          intensity={0.4}
-        />
-        <Suspense fallback={null}>
-          <Background />
-          <Model />
-        </Suspense>
-        <OrbitControls
-          // enableRotate={false}
-          // enableZoom={false}
-          // enablePan={false}
-          // minPolarAngle={0}
-          // maxPolarAngle={Math.PI / 2.25}
-          ref={controls}
-          makeDefault
-        />
-      </Canvas>
+      <Buttons moveCamera={moveCamera} controls={controls} camera={camera} />
+      <CustomCanvas controls={controls} camera={camera} />
+      <Loader />
     </div>
   );
 }
